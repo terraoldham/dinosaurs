@@ -10,6 +10,5 @@ class InstagramPost(models.Model):
     caption = models.TextField(default=''),
     username = models.TextField(default=''),
     full_name = models.TextField(default=''),
-    likes = models.TextField(default=''),
-    creation_date = models.TextField(default=''),
-    location = models.TextField(default='')
+    like_count = models.TextField(default=''),
+    creation_date = models.TextField(default='')

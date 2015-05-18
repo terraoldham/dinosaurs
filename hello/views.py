@@ -18,7 +18,7 @@ def index(request):
 			caption = i['caption']['text'],
 			username = i['user']['username'],
 			full_name = i['user']['full_name'],
-			likes = i['likes']['count'],
+			like_count = i['likes']['count'],
 			creation_date = i['caption']['created_time'],	
 		)
 		instagrampost.save()
