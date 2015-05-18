@@ -22,7 +22,7 @@ def index(request):
 			creation_date = i['created_time'],	
 		)
 		instagrampost.save()
-		posts = instagrampost.objects.all()
+		posts = InstagramPost.objects.all()
 		return render(request, 'home.html', {'posts': [posts]})
 
 def db(request):
