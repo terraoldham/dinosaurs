@@ -13,7 +13,7 @@ def index(request):
 	
 	for i in items:
 		instagrampost = InstagramPost(
-			url = i['images']['standard_resolution']['url'],
+			photo_url = i['images']['standard_resolution']['url'],
 			tags = i['tags'],
 			caption = i['caption']['text'],
 			username = i['user']['username'],

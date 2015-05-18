@@ -5,7 +5,7 @@ class Greeting(models.Model):
     when = models.DateTimeField('date created', auto_now_add=True)
 
 class InstagramPost(models.Model):
-    url = models.TextField(default=''),
+    photo_url = models.TextField(default=''),
     tags = models.TextField(default=''),
     caption = models.TextField(default=''),
     username = models.TextField(default=''),
