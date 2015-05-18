@@ -19,8 +19,7 @@ def index(request):
 			username = i['user']['username'],
 			full_name = i['user']['full_name'],
 			likes = i['likes']['count'],
-			creation_date = i['created_time'],
-			location = i['location']['name']	
+			creation_date = i['created_time'],	
 		)
 		instagrampost.save()
 		posts = instagrampost.objects.all()
