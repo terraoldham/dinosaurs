@@ -12,14 +12,15 @@ def index(request):
 	
 	for item in items:
 		caption = item['caption']['text'] if item['caption'] else None
+		creation_date = item['caption']['created_time'] if item['caption'] else None
 		instagrampost = InstagramPost.objects.create(
 			photo_url = item['images']['standard_resolution']['url'],
 			tag_text = item['tags'],
 			caption = caption,
+			creation_date = creation_date,
 			user_name = item['user']['username'],
 			fullname = item['user']['full_name'],
-			like_count = item['likes']['count'],
-			creation_date = item['caption']['created_time'],	
+			like_count = item['likes']['count'],	
 		)
 	    
 	posts = InstagramPost.objects.all()
