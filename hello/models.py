@@ -21,8 +21,8 @@ class InstagramPost(models.Model):
             self.caption,
             self.like_count, 
             self.tag_text, 
-            self.creation_date,
-            self.photo_url
+            self.creation_date #,
+            #self.photo_url
         )
     
     
