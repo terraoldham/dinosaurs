@@ -19,7 +19,7 @@ class InstagramPost(models.Model):
             self.fullname,
             self.user_name,
             self.caption,
-            self.like_count 
+            self.like_count, 
             self.tag_text, 
             self.creation_date
         )
