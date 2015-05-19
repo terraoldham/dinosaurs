@@ -23,7 +23,7 @@ def index(request):
 				creation_date = creation_date,
 				user_name = item['user']['username'],
 				fullname = item['user']['full_name'],
-				like_count = item['likes']['count'],	
+				like_count = like_count	
 			)
 	    
 		dino_page_posts = InstagramPost.objects.order_by('-id')[:10]
