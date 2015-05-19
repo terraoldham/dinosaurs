@@ -21,9 +21,9 @@ def index(request):
 			like_count = i['likes']['count'],
 			creation_date = i['caption']['created_time'],	
 		)
-		instagrampost.save()
-		posts = InstagramPost.objects.all()
-		return render(request, 'home.html', {'posts': [posts]})
+	    instagrampost.save()
+	posts = InstagramPost.objects.all()
+	return render(request, 'home.html', {'posts': [posts]})
 
 def db(request):
 
