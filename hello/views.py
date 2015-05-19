@@ -27,7 +27,7 @@ def index(request):
 			)
 	    
 		dino_page_posts = InstagramPost.objects.all()
-		return render(request, 'dino.html', {'dino_page_posts', dino_page_posts})
+		return render(request, 'dino.html', {'dino_page_posts': dino_page_posts})
 		
     else: 
 		return render(request, 'home.html')
