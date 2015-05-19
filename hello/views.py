@@ -16,8 +16,8 @@ def index(request):
 			photo_url = i['images']['standard_resolution']['url'],
 			tag_text = i['tags'],
 			caption = i['caption']['text'],
-			username = i['user']['username'],
-			full_name = i['user']['full_name'],
+			user_name = i['user']['username'],
+			fullname = i['user']['full_name'],
 			like_count = i['likes']['count'],
 			creation_date = i['caption']['created_time'],	
 		)
