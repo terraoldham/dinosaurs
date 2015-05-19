@@ -22,6 +22,7 @@ class InstagramPost(models.Model):
             self.like_count, 
             self.tag_text, 
             self.creation_date
+            self.photo_url
         )
     
     
@@ -30,5 +31,5 @@ class InstagramPost(models.Model):
         #self.height = 680
         #self.width = 680
         
-    def images(self):
-    	return "%s" % self.photo_url
+    #def images(self):
+    	#return "%s" % self.photo_url
