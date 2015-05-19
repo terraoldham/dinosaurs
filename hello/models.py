@@ -15,11 +15,11 @@ class InstagramPost(models.Model):
     
     def __unicode__(self):
         return u'%s %s %s %s %s %s %s' % (
-            self.id, 
-            self.tag_text, 
-            self.caption, 
-            self.user_name, 
+            self.id,
             self.fullname,
-            self.like_count,
+            self.user_name,
+            self.caption,
+            self.like_count 
+            self.tag_text, 
             self.creation_date
         )
