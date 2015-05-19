@@ -23,3 +23,12 @@ class InstagramPost(models.Model):
             self.tag_text, 
             self.creation_date
         )
+    
+    
+    def __init__(self, url, width, height):
+        self.photo_url = photo_url
+        self.height = 680
+        self.width = 680
+        
+    def images(self):
+    	return self.photo_url
