@@ -8,7 +8,6 @@ import os
 def index(request):
 
     if request.method == "POST":
-        return render(request, 'dino.html', {'dino_page_posts': [dino_page_posts]})
 		r = requests.get('https://api.instagram.com/v1/media/popular?client_id=015f71721d534f73afeec647c844105b')
 		data = r.json()
 		items = data.get('data') # data['data']
@@ -27,7 +26,7 @@ def index(request):
 			)
 	    
 		posts = InstagramPost.objects.all()
-		#dino_page_posts = InstagramPosts.objects.get().order_by('-id')
+		dino_page_posts = posts.order_by('-id').fetch(10)
 		
 		return render(request, 'dino.html', {'dino_page_posts', [dino_page_posts]})
 		
