@@ -14,7 +14,7 @@ class InstagramPost(models.Model):
     creation_date = models.TextField(default='')
     
     def __unicode__(self):
-        return u'%s %s %s %s %s %s %s' % (
+        return u'%s\n %s\n %s\n %s\n %s\n %s\n %s\n' % (
             self.id,
             self.fullname,
             self.user_name,
