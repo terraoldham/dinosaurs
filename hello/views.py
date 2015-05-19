@@ -26,7 +26,7 @@ def index(request):
 				like_count = item['likes']['count'],	
 			)
 	    
-		dino_page_posts = InstagramPost.objects.all()
+		dino_page_posts = InstagramPost.objects.order_by('-id')[:10]
 		return render(request, 'dino.html', {'dino_page_posts': dino_page_posts})
 		
     else: 
