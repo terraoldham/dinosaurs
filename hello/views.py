@@ -14,7 +14,7 @@ def index(request):
 	for i in items:
 		instagrampost = InstagramPost(
 			photo_url = i['images']['standard_resolution']['url'],
-			tags = i['tags'],
+			tag_text = i['tags'],
 			caption = i['caption']['text'],
 			username = i['user']['username'],
 			full_name = i['user']['full_name'],
