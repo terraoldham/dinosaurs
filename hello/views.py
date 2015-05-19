@@ -27,10 +27,9 @@ def index(request):
 	    
 		posts = InstagramPost.objects.all()
 		dino_page_posts = posts.order_by('-id').fetch(10)
-		
 		return render(request, 'dino.html', {'dino_page_posts', [dino_page_posts]})
 		
-	else: 
+    else: 
 		return render(request, 'home.html')
 
 def db(request):
