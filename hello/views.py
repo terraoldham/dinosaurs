@@ -12,7 +12,7 @@ def index(request):
 	item_id = 0 
 	
 	for i in items:
-		instagrampost = InstagramPost(
+		instagrampost = InstagramPost.objects.create(
 			photo_url = i['images']['standard_resolution']['url'],
 			tag_text = i['tags'],
 			caption = i['caption']['text'],
@@ -21,9 +21,9 @@ def index(request):
 			like_count = i['likes']['count'],
 			creation_date = i['caption']['created_time'],	
 		)
-	    instagrampost.save()
+	    
 	posts = InstagramPost.objects.all()
-	return render(request, 'home.html', {'posts': [posts]})
+	return render(request, 'home.html', {'posts': posts})
 
 def db(request):
 
