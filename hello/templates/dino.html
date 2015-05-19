@@ -8,8 +8,14 @@
                 <li>{{ dino_page_post }}</li>
             {% endfor %}
         </ul>
-        <form method="post">
+        <form action="/dino/" method="post">
             <button>Show Me All The Dinosaurs!</button>
+            {% csrf_token %}
+                <ul>
+            		{% for dino_page_post in dino_page_posts %}
+                		<li>{{ dino_page_post }}</li>
+            		{% endfor %}
+        		</ul>
         </form>
     </body>
 </html>
