@@ -5,13 +5,7 @@
             <h2>Here are the most popular Dinosaurs of the day!</h2>
         <ul>
             {% for dino_page_post in dino_page_posts %}
-                <li>{{ dino_page_post.id }}</li>
-                <li>{{ dino_page_post.fullname }}</li>
-                <li>{{ dino_page_post.user_name }}</li>
-                <li>{{ dino_page_post.caption }}</li>
-                <li>{{ dino_page_post.like_count }}</li>
-                <li>{{ dino_page_post.tag_text }}</li>
-                <li>{{ dino_page_post.creation_date }}</li>
+                <li>{{ dino_page_post }}
             {% endfor %}
         </ul>
         <form action="/dino/" method="post">
