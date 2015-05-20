@@ -5,7 +5,8 @@
             <h2>Here are the most popular Dinosaurs of the day!</h2>
         <ul>
             {% for dino_page_post in dino_page_posts %}
-                <img>{{ dino_page_post.photo_url }}</img>
+                <img> src={{ dino_page_post.photo_url }} style="width:300px;height:300px"</img>
+                <li>{{ dino_page_post.id }}></li>
                 <li>{{ dino_page_post.fullname }}</li>
                 <li>{{ dino_page_post.user_name }}</li>
                 <li>{{ dino_page_post.caption }}</li>
@@ -13,8 +14,6 @@
                 <li>{{ dino_page_post.fullname }}</li>
                 <li>{{ dino_page_post.creation_date}}</li>
                 <li>{{ dino_page_post.tag_text }}</li>
-                
-                </li>
             {% endfor %}
         </ul>
         <form action="/dino/" method="post">
