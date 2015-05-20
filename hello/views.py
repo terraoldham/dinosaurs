@@ -42,3 +42,20 @@ def db(request):
     return render(request, 'db.html', {'greetings': greetings})
     	
 
+#def nofilter(request): 
+
+	#r = requests.get('https://api.instagram.com/v1/media/popular?client_id=015f71721d534f73afeec647c844105b')
+	#data = r.json()
+	#items = data.get('data') # data['data']
+	#for item in items:
+	#	caption = item['caption']['text'] if item['caption'] else None 
+	#	instaFilter.objects.create(
+	#		filter = item['filter'],
+	#		caption = caption
+	#	)
+	#if "nofilter" in caption and filter != "Normal":
+	#	return "Lies - there is a filter"
+	#else: 
+	#	return pass
+	
+
