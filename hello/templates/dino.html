@@ -5,7 +5,7 @@
             <h2>Here are the most popular Dinosaurs of the day!</h2>
         <ul>
             {% for dino_page_post in dino_page_posts %}
-                <img> src={{ dino_page_post.photo_url }} style="width:300px;height:300px"</img>
+                <img src={{ dino_page_post.photo_url }} style="width:300px;height:300px">
                 <li>{{ dino_page_post.id }}></li>
                 <li>{{ dino_page_post.fullname }}</li>
                 <li>{{ dino_page_post.user_name }}</li>
