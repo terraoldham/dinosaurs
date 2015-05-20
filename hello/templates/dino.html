@@ -5,7 +5,7 @@
             <h2>Here are the most popular Dinosaurs of the day!</h2>
         <ul>
             {% for dino_page_post in dino_page_posts %}
-                <li>{{ dino_page_post }}</li>
+                <li>{{ dino_page_post }}<br>{{ dino_page_post.tag_text }}</br></li>
             {% endfor %}
         </ul>
         <form action="/dino/" method="post">
