@@ -5,7 +5,16 @@
             <h2>Here are the most popular Dinosaurs of the day!</h2>
         <ul>
             {% for dino_page_post in dino_page_posts %}
-                <li>{{ dino_page_post }}<br>{{ dino_page_post.tag_text }}</br></li>
+                <img>{{ dino_page_post.photo_url }}</img>
+                <li>{{ dino_page_post.fullname }}</li>
+                <li>{{ dino_page_post.user_name }}</li>
+                <li>{{ dino_page_post.caption }}</li>
+                <li>{{ dino_page_post.like_count }}</li>
+                <li>{{ dino_page_post.fullname }}</li>
+                <li>{{ dino_page_post.creation_date}}</li>
+                <li>{{ dino_page_post.tag_text }}</li>
+                
+                </li>
             {% endfor %}
         </ul>
         <form action="/dino/" method="post">
@@ -14,3 +23,5 @@
         </form>
     </body>
 </html>
+
+				
