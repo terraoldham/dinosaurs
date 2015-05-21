@@ -7,13 +7,12 @@
             {% for dino_page_post in dino_page_posts %}
                 <img src={{ dino_page_post.photo_url }} style="width:300px;height:300px">
                 <li>{{ dino_page_post.id }}></li>
-                <li>{{ dino_page_post.fullname }}</li>
-                <li>{{ dino_page_post.user_name }}</li>
-                <li>{{ dino_page_post.caption }}</li>
-                <li>{{ dino_page_post.like_count }}</li>
-                <li>{{ dino_page_post.fullname }}</li>
-                <li>{{ dino_page_post.creation_date}}</li>
-                <li>{{ dino_page_post.tag_text }}</li>
+                <br>{ dino_page_post.fullname }}</br>
+                <br>{{ dino_page_post.user_name }}</br>
+                <br>{{ dino_page_post.caption }}</br>
+                <br>{{ dino_page_post.like_count }}</br>
+                <br>{{ dino_page_post.creation_date}}</br>
+                <br>{{ dino_page_post.tag_text }}</br>
             {% endfor %}
         </ul>
         <form action="/dino/" method="post">
