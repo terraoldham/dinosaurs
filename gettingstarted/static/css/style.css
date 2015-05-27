@@ -2,6 +2,6 @@ li.extra {
     display: none;
 }
 
-li.show {
-
+li.shown {
+	display: inline;
 }

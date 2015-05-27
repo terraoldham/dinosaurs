@@ -4,42 +4,42 @@
 		<link rel="stylesheet" type="static/css" href="style.css">
 		<script src="http://code.jquery.com/jquery-2.1.4.js"></script>
 		<script>
-		$(window).load(function(){
-  			$('.showAll').click(function() {
-				showAll();
+		$(function(){
+			$(".showAll").click(function(){
+				$("li.extra").each(function(){
+					(this).removeClass("extra").addClass("shown");
+				}
 			});
 		});
-		function showAll() {
-			$("li.extra").each(function(){
-				$(this).removeClass("extra").addClass("shown");
-			});		
-		}
+
 		</script>
 	</head>
     <body>
         <h1>This is DINOGRAM</h1> 
             <h2>Here are the most popular Dinosaurs of the day!</h2>
         <ul>
-            {% for (i = 0; i < 10; i++) %}
+            {% for dino_page_post in dino_page_posts[0:9] %}
                 <img src={{ dino_page_post.photo_url }} style="width:300px;height:300px">
-                <li class="shown">Number: {{ dino_page_post.id }}</li>
-                <br>Full Name: {{ dino_page_post.fullname }}</br>
-                <br>Username: {{ dino_page_post.user_name }}</br>
-                <br>Caption: {{ dino_page_post.caption }}</br>
-                <br>Likes: {{ dino_page_post.like_count }}</br>
-                <br>Creation Date: {{ dino_page_post.creation_date}}</br>
-                <br>Tags: {{ dino_page_post.tag_text }}</br>
+                <li class="shown">Number: {{ dino_page_post.id }}
+                <br>Full Name: {{ dino_page_post.fullname }}
+                <br>Username: {{ dino_page_post.user_name }}
+                <br>Caption: {{ dino_page_post.caption }}
+                <br>Likes: {{ dino_page_post.like_count }}
+                <br>Creation Date: {{ dino_page_post.creation_date}}
+                <br>Tags: {{ dino_page_post.tag_text }}
+                </li>
             {% endfor %}
             
-            {% for dino_page_post in dino_page_posts %}
+            {% for dino_page_post in dino_page_posts[10:] %}
                 <img src={{ dino_page_post.photo_url }} style="width:300px;height:300px">
-                <li class="extra">Number: {{ dino_page_post.id }}</li>
-                <br>Full Name: {{ dino_page_post.fullname }}</br>
-                <br>Username: {{ dino_page_post.user_name }}</br>
+                <li class="extra">Number: {{ dino_page_post.id }}
+                <br>Full Name: {{ dino_page_post.fullname }}
+                <br>Username: {{ dino_page_post.user_name }}
                 <br>Caption: {{ dino_page_post.caption }}</br>
                 <br>Likes: {{ dino_page_post.like_count }}</br>
                 <br>Creation Date: {{ dino_page_post.creation_date}}</br>
                 <br>Tags: {{ dino_page_post.tag_text }}</br>
+                </li>
             {% endfor %}
             
         </ul>
