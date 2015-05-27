@@ -1,7 +1,8 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
-	<head> 
-		<link rel="stylesheet" type="static/css" href="style.css">
+	<head>
+    <link rel="stylesheet" type="static/css" href="{% static 'css/style.css' %}">
 		<script src="http://code.jquery.com/jquery-2.1.4.js"></script>
 		<script>
 		$(function(){
@@ -15,7 +16,7 @@
 		</script>
 	</head>
     <body>
-        <h1>This is DINOGRAM</h1> 
+        <h1>This is DINOGRAM</h1>
             <h2>Here are the most popular Dinosaurs of the day!</h2>
         <ul>
             {% for dino_page_post in dino_page_posts|slice:":9" %}
@@ -29,7 +30,7 @@
                 <br>Tags: {{ dino_page_post.tag_text }}
                 </li>
             {% endfor %}
-            
+
             {% for dino_page_post in dino_page_posts|slice:"10:" %}
                 <img src={{ dino_page_post.photo_url }} style="width:300px;height:300px">
                 <li class="extra">Number: {{ dino_page_post.id }}
@@ -41,10 +42,10 @@
                 <br>Tags: {{ dino_page_post.tag_text }}</br>
                 </li>
             {% endfor %}
-            
+
         </ul>
     	<button type="button" class="showAll">Show Me All The Dinosaurs!</button>
     </body>
 </html>
 
-				
+
