@@ -8,7 +8,7 @@
 			$(".showAll").click(function(){
 				$("li.extra").each(function(){
 					(this).removeClass("extra").addClass("shown");
-				}
+				});
 			});
 		});
 
@@ -43,10 +43,7 @@
             {% endfor %}
             
         </ul>
-        <form action="/all/" method="post">
-            <button type="button" class="showAll">Show Me All The Dinosaurs!</button>
-            {% csrf_token %}
-        </form>
+    	<button type="button" class="showAll">Show Me All The Dinosaurs!</button>
     </body>
 </html>
 
