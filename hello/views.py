@@ -10,7 +10,7 @@ def index(request):
     if request.method == "POST":
 		r = requests.get('https://api.instagram.com/v1/media/popular?client_id=015f71721d534f73afeec647c844105b')
 		data = r.json()
-		items = data.get('data') # data['data']
+		items = data.get('data') 
 	
 		for item in items:
 			caption = item['caption']['text'] if item['caption'] else None
@@ -26,8 +26,8 @@ def index(request):
 				like_count = like_count	
 			)
 	    
-		dino_page_posts = InstagramPost.objects.order_by('-id')[:10]
-		return render(request, 'dino.html', {'dino_page_posts': dino_page_posts})
+		dino_page_posts = InstagramPost.objects.order_by('-id') 
+		return render(request, 'dino.html', {'dino_page_posts': dino_page_posts}) #returns all of the dinoposts 
 		
     else: 
 		return render(request, 'home.html')
@@ -36,7 +36,6 @@ def db(request):
 
     greeting = Greeting()
     greeting.save()
-
     greetings = Greeting.objects.all()
 
     return render(request, 'db.html', {'greetings': greetings})

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>This is DINOGRAM</h1> 
+            <h2>Here are ALL of the most popular Dinosaurs of the day!</h2>
+        <ul>
+            {% for dino_page_post in dino_page_posts %}
+                <img src={{ dino_page_post.photo_url }} style="width:300px;height:300px">
+                <li>Number: {{ dino_page_post.id }}</li>
+                <br>Full Name: {{ dino_page_post.fullname }}</br>
+                <br>Username: {{ dino_page_post.user_name }}</br>
+                <br>Caption: {{ dino_page_post.caption }}</br>
+                <br>Likes: {{ dino_page_post.like_count }}</br>
+                <br>Creation Date: {{ dino_page_post.creation_date}}</br>
+                <br>Tags: {{ dino_page_post.tag_text }}</br>
+            {% endfor %}
+        </ul>
+    </body>
+</html>

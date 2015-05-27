@@ -25,11 +25,3 @@ class InstagramPost(models.Model):
             self.photo_url
         )
     
-    
-    #def __init__(self):
-        #self.photo_url = photo_url
-        #self.height = 680
-        #self.width = 680
-        
-    #def images(self):
-    	#return "%s" % self.photo_url
