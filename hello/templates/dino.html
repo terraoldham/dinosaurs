@@ -18,7 +18,7 @@
         <h1>This is DINOGRAM</h1> 
             <h2>Here are the most popular Dinosaurs of the day!</h2>
         <ul>
-            {% for dino_page_post in dino_page_posts[0:9] %}
+            {% for dino_page_post in dino_page_posts|slice:":9" %}
                 <img src={{ dino_page_post.photo_url }} style="width:300px;height:300px">
                 <li class="shown">Number: {{ dino_page_post.id }}
                 <br>Full Name: {{ dino_page_post.fullname }}
@@ -30,7 +30,7 @@
                 </li>
             {% endfor %}
             
-            {% for dino_page_post in dino_page_posts[10:] %}
+            {% for dino_page_post in dino_page_posts|slice:"10:" %}
                 <img src={{ dino_page_post.photo_url }} style="width:300px;height:300px">
                 <li class="extra">Number: {{ dino_page_post.id }}
                 <br>Full Name: {{ dino_page_post.fullname }}
