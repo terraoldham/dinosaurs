@@ -1,5 +1,4 @@
 {% load staticfiles %}
-<!DOCTYPE html>
 <html>
 	<head>
     <link rel="stylesheet" type="static/css" href="{% static 'css/style.css' %}">
@@ -20,8 +19,8 @@
             <h2>Here are the most popular Dinosaurs of the day!</h2>
         <ul>
             {% for dino_page_post in dino_page_posts|slice:":9" %}
+            	<li class="shown">Number: {{ dino_page_post.id }}
                 <img src={{ dino_page_post.photo_url }} style="width:300px;height:300px">
-                <li class="shown">Number: {{ dino_page_post.id }}
                 <br>Full Name: {{ dino_page_post.fullname }}
                 <br>Username: {{ dino_page_post.user_name }}
                 <br>Caption: {{ dino_page_post.caption }}
@@ -32,14 +31,14 @@
             {% endfor %}
 
             {% for dino_page_post in dino_page_posts|slice:"10:" %}
+            	<li class="extra">Number: {{ dino_page_post.id }}
                 <img src={{ dino_page_post.photo_url }} style="width:300px;height:300px">
-                <li class="extra">Number: {{ dino_page_post.id }}
                 <br>Full Name: {{ dino_page_post.fullname }}
                 <br>Username: {{ dino_page_post.user_name }}
-                <br>Caption: {{ dino_page_post.caption }}</br>
-                <br>Likes: {{ dino_page_post.like_count }}</br>
-                <br>Creation Date: {{ dino_page_post.creation_date}}</br>
-                <br>Tags: {{ dino_page_post.tag_text }}</br>
+                <br>Caption: {{ dino_page_post.caption }}
+                <br>Likes: {{ dino_page_post.like_count }}
+                <br>Creation Date: {{ dino_page_post.creation_date}}
+                <br>Tags: {{ dino_page_post.tag_text }}
                 </li>
             {% endfor %}
 
