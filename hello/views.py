@@ -6,6 +6,9 @@ import os
 
 # Create your views here.
 def index(request):
+	return render(request, 'home.html')
+
+def dino(request):
 
 	if request.method == "POST":
 		r = requests.get('https://api.instagram.com/v1/media/popular?client_id=015f71721d534f73afeec647c844105b')
