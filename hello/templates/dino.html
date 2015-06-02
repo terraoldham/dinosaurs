@@ -20,7 +20,7 @@
         <ul>
             {% for dino_page_post in dino_page_posts|slice:":9" %}
             	<li class="shown">Number: {{ dino_page_post.id }}
-                <img src={{ dino_page_post.photo_url }} style="width:300px;height:300px">
+                <br><img src={{ dino_page_post.photo_url }} style="width:300px;height:300px">
                 <br>Full Name: {{ dino_page_post.fullname }}
                 <br>Username: {{ dino_page_post.user_name }}
                 <br>Caption: {{ dino_page_post.caption }}
@@ -44,6 +44,7 @@
 
         </ul>
     	<button type="button" class="showAll">Show Me All The Dinosaurs!</button>
+    	<form action="/filtered/" method="post"><button>No filter and filter?!</button>
     </body>
 </html>
 

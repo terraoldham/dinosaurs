@@ -1,0 +1,36 @@
+{% load staticfiles %}
+<html>
+	<head>
+    <link rel="stylesheet" type="static/css" href="{% static 'css/style.css' %}">
+		<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+		<script>
+		$(function(){
+			$(".showAll").click(function(){
+				$("li.extra").each(function(){
+					$(this).removeClass("extra").addClass("shown");
+				});
+			});
+		});
+
+		</script>
+	</head>
+    <body>
+        <h1>These people are liars!</h1>
+            <h2>Anyone on this page used a "Nofilter" hashtag, then added a filter</h2>
+        <ul>
+            {% for filtered_post in filtered_posts %}
+            	<li class="shown">Number: {{ filtered_post.id }}
+                <br><img src={{ filtered_post.photo_url }} style="width:300px;height:300px">
+                <br>Full Name: {{ filtered_post.fullname }}
+                <br>Username: {{ filtered_post.user_name }}
+                <br>Caption: {{ filtered_post.caption }}
+                <br>Likes: {{ filtered_post.like_count }}
+                <br>Creation Date: {{ filtered_post.creation_date}}
+                <br>Tags: {{ filtered_post.tag_text }}
+                </li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
+
+

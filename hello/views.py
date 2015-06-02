@@ -1,36 +1,31 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+import instagram_api
 import requests
 from .models import Greeting, InstagramPost
 import os
 
 # Create your views here.
-def index(request):
+def instagramAPI(request):
+	popular_posts()
 	return render(request, 'home.html')
 
-def dino(request):
 
-	if request.method == "POST":
-		r = requests.get('https://api.instagram.com/v1/media/popular?client_id=015f71721d534f73afeec647c844105b')
-		data = r.json()
-		items = data.get('data') 
-	
-		for item in items:
-			caption = item['caption']['text'] if item['caption'] else None
-			creation_date = item['caption']['created_time'] if item['caption'] else None
-			like_count = item['likes']['count'] if item['likes'] else None
-			instagrampost = InstagramPost.objects.create(
-				photo_url = item['images']['standard_resolution']['url'],
-				tag_text = item['tags'],
-				caption = caption,
-				creation_date = creation_date,
-				user_name = item['user']['username'],
-				fullname = item['user']['full_name'],
-				like_count = like_count	
-			)
-	    
-	dino_page_posts = InstagramPost.objects.order_by('-id') 
+def dino(request):
+	for item in items:
+		get_items(items)
+
+	dino_page_posts = InstagramPost.objects.all().order_by('-id') 
 	return render(request, 'dino.html', {'dino_page_posts': dino_page_posts}) #returns all of the dinoposts 
+	
+
+def filtered(request):
+	for item in itmes: 
+		get_items(items)
+
+	filtered_posts =  InstagramPost.objects.filter(filter="Normal").filter(tag_text__icontains="nofilter")
+	return render(request, 'filtered.html', {'filtered_posts': filtered_page_posts}} #returns posts that are contain a filter 
+	
 
 def db(request):
 
@@ -39,22 +34,5 @@ def db(request):
     greetings = Greeting.objects.all()
 
     return render(request, 'db.html', {'greetings': greetings})
-    	
-
-#def nofilter(request): 
-
-	#r = requests.get('https://api.instagram.com/v1/media/popular?client_id=015f71721d534f73afeec647c844105b')
-	#data = r.json()
-	#items = data.get('data') # data['data']
-	#for item in items:
-	#	caption = item['caption']['text'] if item['caption'] else None 
-	#	instaFilter.objects.create(
-	#		filter = item['filter'],
-	#		caption = caption
-	#	)
-	#if "nofilter" in caption and filter != "Normal":
-	#	return "Lies - there is a filter"
-	#else: 
-	#	return pass
-	
+    		
 

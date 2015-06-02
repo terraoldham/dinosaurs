@@ -12,6 +12,7 @@ class InstagramPost(models.Model):
     fullname = models.TextField(default='')
     like_count = models.TextField(default='')
     creation_date = models.TextField(default='')
+    filter = models.TextField(default='')
     
     def __unicode__(self):
         return u'%s\n %s\n %s\n %s %s %s %s %s' % (
