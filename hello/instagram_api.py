@@ -5,7 +5,7 @@ from .models import Greeting, InstagramPost
 import os
 
 def popular_posts():
-	if request.method == "POST":
+	if self.request.method == "POST":
 		r = requests.get('https://api.instagram.com/v1/media/popular?client_id=015f71721d534f73afeec647c844105b')
 		data = r.json()
 		items = data.get('data')
