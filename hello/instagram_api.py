@@ -11,7 +11,6 @@ def popular_posts():
 	return items
 
 def get_items():
-	for item in items:
 		caption = item['caption']['text'] if item['caption'] else None
 		creation_date = item['caption']['created_time'] if item['caption'] else None
 		like_count = item['likes']['count'] if item['likes'] else None
