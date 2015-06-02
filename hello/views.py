@@ -12,17 +12,13 @@ def instagramAPI(request):
 
 
 def dino(request):
-	for item in items:
-		get_items(items)
-
+	get_items()
 	dino_page_posts = InstagramPost.objects.all().order_by('-id') 
 	return render(request, 'dino.html', {'dino_page_posts': dino_page_posts}) #returns all of the dinoposts 
 	
 
 def filtered(request):
-	for item in itmes: 
-		get_items(items)
-
+	get_items()
 	filtered_posts =  InstagramPost.objects.filter(filter="Normal").filter(tag_text__icontains="nofilter")
 	return render(request, 'filtered.html', {'filtered_posts': filtered_posts})  #returns posts that are contain a filter 
 	
