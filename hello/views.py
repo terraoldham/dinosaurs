@@ -24,7 +24,7 @@ def filtered(request):
 		get_items(items)
 
 	filtered_posts =  InstagramPost.objects.filter(filter="Normal").filter(tag_text__icontains="nofilter")
-	return render(request, 'filtered.html', {'filtered_posts': filtered_page_posts}} #returns posts that are contain a filter 
+	return render(request, 'filtered.html', {'filtered_posts': filtered_posts})  #returns posts that are contain a filter 
 	
 
 def db(request):
