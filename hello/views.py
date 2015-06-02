@@ -5,9 +5,8 @@ import requests
 from .models import Greeting, InstagramPost
 import os
 
-# Create your views here.
 def instagramAPI(request):
-	if request.method == "POST"
+	if request.method == "POST":
 		popular_posts()
 	return render(request, 'home.html')
 
