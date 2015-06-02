@@ -11,17 +11,17 @@ def popular_posts():
 	return items
 
 def get_items():
-		caption = item['caption']['text'] if item['caption'] else None
-		creation_date = item['caption']['created_time'] if item['caption'] else None
-		like_count = item['likes']['count'] if item['likes'] else None
-		instagrampost = InstagramPost.objects.create(
-			photo_url = item['images']['standard_resolution']['url'],
-			tag_text = item['tags'],
-			caption = caption,
-			creation_date = creation_date,
-			user_name = item['user']['username'],
-			fullname = item['user']['full_name'],
-			like_count = like_count,
-			filter = item['filter']
-		)
+	caption = item['caption']['text'] if item['caption'] else None
+	creation_date = item['caption']['created_time'] if item['caption'] else None
+	like_count = item['likes']['count'] if item['likes'] else None
+	instagrampost = InstagramPost.objects.create(
+		photo_url = item['images']['standard_resolution']['url'],
+		tag_text = item['tags'],
+		caption = caption,
+		creation_date = creation_date,
+		user_name = item['user']['username'],
+		fullname = item['user']['full_name'],
+		like_count = like_count,
+		filter = item['filter']
+	)
 	return instagrampost
