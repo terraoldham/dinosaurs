@@ -5,11 +5,10 @@ from .models import Greeting, InstagramPost
 import os
 
 def popular_posts():
-	if self.request.method == "POST":
 		r = requests.get('https://api.instagram.com/v1/media/popular?client_id=015f71721d534f73afeec647c844105b')
 		data = r.json()
 		items = data.get('data')
-	return items
+		return items
 
 def get_items():
 	caption = item['caption']['text'] if item['caption'] else None

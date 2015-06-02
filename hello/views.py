@@ -7,7 +7,8 @@ import os
 
 # Create your views here.
 def instagramAPI(request):
-	popular_posts()
+	if request.method == "POST"
+		popular_posts()
 	return render(request, 'home.html')
 
 
