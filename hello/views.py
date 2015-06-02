@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-import instagram_api
+from instagram_api import popular_posts
 import requests
 from .models import Greeting, InstagramPost
 import os
