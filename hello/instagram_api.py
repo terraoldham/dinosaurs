@@ -10,11 +10,11 @@ def popular_posts():
 	items = data.get('data')
 	return items
 
-def get_items():
+def create_item(item):
 	caption = item['caption']['text'] if item['caption'] else None
 	creation_date = item['caption']['created_time'] if item['caption'] else None
 	like_count = item['likes']['count'] if item['likes'] else None
-	instagrampost = InstagramPost.objects.create(
+	InstagramPost.objects.create(
 		photo_url = item['images']['standard_resolution']['url'],
 		tag_text = item['tags'],
 		caption = caption,
@@ -24,4 +24,4 @@ def get_items():
 		like_count = like_count,
 		filter = item['filter']
 	)
-	return instagrampost
+	
