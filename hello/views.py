@@ -13,7 +13,7 @@ def instagramAPI(request):
 
 def dino(request):
 	if request.method == "POST":
-		items = popular_post()
+		items = popular_posts()
 		for item in items:
 			create_item(item)	 
 	dino_page_posts = InstagramPost.objects.all().order_by('-id') 
