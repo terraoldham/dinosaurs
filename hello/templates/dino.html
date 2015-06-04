@@ -10,8 +10,8 @@
 		<script>
 		$(function(){
 			$("#showAll").click(function(){
-				$("#extra").each(function(){
-					$this.id="shown";
+				$("div.extra").each(function(){
+					$(this).removeClass("extra").addClass("shown");
 				});
 			});
 		});
@@ -24,7 +24,7 @@
             <h2>Here are the most popular Dinosaurs of the day!</h2>
         <ul>
             {% for dino_page_post in dino_page_posts|slice:":9" %}
-            	<div id="shown">
+            	<div class="shown">
             		<div class="panel-primary">
             			<div class="panel-heading">
             				<h3 class="panel-title">{{ dino_page_post.fullname }}</h3>
@@ -46,7 +46,7 @@
             {% endfor %}
 
             {% for dino_page_post in dino_page_posts|slice:"10:" %}
-            	<div id="extra">
+            	<div class="extra">
             		<div class="panel-primary">
             			<div class="panel-heading">
             				<h3 class="panel-title">{{ dino_page_post.fullname }}</h3>

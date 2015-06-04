@@ -1,7 +1,7 @@
-#extra {
+div.extra {
     display: none;
 }
 
-#shown {
+div.shown {
 	display: inline;
 }
