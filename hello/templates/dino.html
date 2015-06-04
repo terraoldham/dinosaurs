@@ -44,11 +44,12 @@
             {% endfor %}
 
             {% for dino_page_post in dino_page_posts|slice:"10:" %}
-            	<div class="panel-primary">
-            		<div class="panel-heading">
-            			<h3 class="panel-title">{{ dino_page_post.fullname }}</h3>
-            			<h4 class="panel-title">@{{ dino_page_post.user_name }}</h4>
-            		</div>
+            	<div id="extra">
+            		<div class="panel-primary">
+            			<div class="panel-heading">
+            				<h3 class="panel-title">{{ dino_page_post.fullname }}</h3>
+            				<h4 class="panel-title">@{{ dino_page_post.user_name }}</h4>
+            			</div>
             		<div class="panel-body">
             			<li class="extra">
             				<br><img src={{ dino_page_post.photo_url }} style="width:300px;height:300px">
@@ -61,6 +62,7 @@
                 			<br>Tags: {{ dino_page_post.tag_text }}
                 			<br>
                 		</li>
+                	</div>
                 	</div>
                 </div>
             {% endfor %}
