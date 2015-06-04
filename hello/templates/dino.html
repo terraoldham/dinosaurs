@@ -29,7 +29,8 @@
             {% for dino_page_post in dino_page_posts|slice:":9" %}
             	<div class="panel-primary">
             		<div class="panel-heading">
-            			<h3 class="panel-title">{{ dino_page_post.fullname }} : {{ dino_page_post.user_name }}</h3>
+            			<h3 class="panel-title">{{ dino_page_post.fullname }}</h3>
+            			<h4 class="panel-title">@{{ dino_page_post.user_name }}</h4>
             		</div>
             		<div class="panel-body">
             			<li class="shown">
