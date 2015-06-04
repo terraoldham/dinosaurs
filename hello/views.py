@@ -6,16 +6,14 @@ from .models import Greeting, InstagramPost
 import os
 
 def instagramAPI(request):
-	if request.method == "POST":
-		popular_posts()
+	popular_posts()
 	return render(request, 'home.html')
 
 
 def dino(request):
-	if request.method == "POST":
-		items = popular_posts()
-		for item in items:
-			create_item(item)	 
+	items = popular_posts()
+	for item in items:
+		create_item(item)	 
 	dino_page_posts = InstagramPost.objects.all().order_by('-id') 
 	return render(request, 'dino.html', {'dino_page_posts': dino_page_posts}) #returns all of the dinoposts 
 	
