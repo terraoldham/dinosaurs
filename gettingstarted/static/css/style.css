@@ -2,6 +2,6 @@
     display: none;
 }
 
-li.shown {
+#shown {
 	display: inline;
 }
