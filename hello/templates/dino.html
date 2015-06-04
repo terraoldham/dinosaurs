@@ -3,6 +3,13 @@
 	<head>
     <link rel="stylesheet" type="static/css" href="{% static 'css/style.css' %}">
 		<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<link rel="stylesheet" type="text/css" href="/static/style.css">
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		<script>
 		$(function(){
 			$(".showAll").click(function(){
@@ -14,6 +21,7 @@
 
 		</script>
 	</head>
+	<div class="jumbotron">
     <body>
         <h1>This is DINOGRAM</h1>
             <h2>Here are the most popular Dinosaurs of the day!</h2>
@@ -50,6 +58,7 @@
     	<button type="button" class="showAll">Show Me All The Dinosaurs!</button>
     	<form action="/filtered/" method="get"><button>No filter and filter?!</button>
     </body>
+    </div>
 </html>
 
 
