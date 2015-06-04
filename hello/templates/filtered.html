@@ -20,35 +20,37 @@
 
 		</script>
 	</head>
-    <body>
-        <h1>These people are liars!</h1>
-            <h2>Anyone on this page used a "Nofilter" hashtag, then added a filter</h2>
-        <ul>
-            {% for filtered_post in filtered_posts|slice:":9" %}
-            	<li class="shown">Number: {{ filtered_post.id }}
-                <br><img src={{ filtered_post.photo_url }} style="width:300px;height:300px">
-                <br>Full Name: {{ filtered_post.fullname }}
-                <br>Username: {{ filtered_post.user_name }}
-                <br>Caption: {{ filtered_post.caption }}
-                <br>Likes: {{ filtered_post.like_count }}
-                <br>Creation Date: {{ filtered_post.creation_date}}
-                <br>Tags: {{ filtered_post.tag_text }}
-                </li>
-            {% endfor %}
+	<div class="jumbotron">
+    	<body>
+        	<h1>These people are liars!</h1>
+            	<h2>Anyone on this page used a "Nofilter" hashtag, then added a filter</h2>
+        	<ul>
+            	{% for filtered_post in filtered_posts|slice:":9" %}
+            		<li class="shown">Number: {{ filtered_post.id }}
+                	<br><img src={{ filtered_post.photo_url }} style="width:300px;height:300px">
+                	<br>Full Name: {{ filtered_post.fullname }}
+                	<br>Username: {{ filtered_post.user_name }}
+                	<br>Caption: {{ filtered_post.caption }}
+                	<br>Likes: {{ filtered_post.like_count }}
+                	<br>Creation Date: {{ filtered_post.creation_date}}
+                	<br>Tags: {{ filtered_post.tag_text }}
+                	</li>
+            	{% endfor %}
 
-            {% for filtered_post in filtered_posts|slice:"10:" %}
-            	<li class="extra">Number: {{ filtered_post.id }}
-                <img src={{ filtered_post.photo_url }} style="width:300px;height:300px">
-                <br>Full Name: {{ filtered_post.fullname }}
-                <br>Username: {{ filtered_post.user_name }}
-                <br>Caption: {{ filtered_post.caption }}
-                <br>Likes: {{ filtered_post.like_count }}
-                <br>Creation Date: {{ filtered_post.creation_date}}
-                <br>Tags: {{ filtered_post.tag_text }}
-                </li>
-            {% endfor %}
-        </ul>
-    </body>
+            	{% for filtered_post in filtered_posts|slice:"10:" %}
+            		<li class="extra">Number: {{ filtered_post.id }}
+                	<img src={{ filtered_post.photo_url }} style="width:300px;height:300px">
+                	<br>Full Name: {{ filtered_post.fullname }}
+                	<br>Username: {{ filtered_post.user_name }}
+                	<br>Caption: {{ filtered_post.caption }}
+                	<br>Likes: {{ filtered_post.like_count }}
+                	<br>Creation Date: {{ filtered_post.creation_date}}
+                	<br>Tags: {{ filtered_post.tag_text }}
+                	</li>
+            	{% endfor %}
+        	</ul>
+    	</body>
+    </div>
 </html>
 
 

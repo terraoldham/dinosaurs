@@ -27,17 +27,20 @@
             <h2>Here are the most popular Dinosaurs of the day!</h2>
         <ul>
             {% for dino_page_post in dino_page_posts|slice:":9" %}
-            	<li class="shown">
-            	<br>Number: {{ dino_page_post.id }}
-                <br><img src={{ dino_page_post.photo_url }} style="width:300px;height:300px">
-                <br>Full Name: {{ dino_page_post.fullname }}
-                <br>Username: {{ dino_page_post.user_name }}
-                <br>Caption: {{ dino_page_post.caption }}
-                <br>Likes: {{ dino_page_post.like_count }}
-                <br>Creation Date: {{ dino_page_post.creation_date}}
-                <br>Tags: {{ dino_page_post.tag_text }}
-                <br>
-                </li>
+            	<div class="panel-heading">
+            		<h3 class="panel-title">{{ dino_page_post.fullname }} : {{ dino_page_post.user_name }}</h3>
+            	</div>
+            	<div class="panel-body">
+            		<li class="shown">
+            		<br><img src={{ dino_page_post.photo_url }} style="width:300px;height:300px">
+            		<br>Number: {{ dino_page_post.id }}
+                	<br>Caption: {{ dino_page_post.caption }}
+                	<br>Likes: {{ dino_page_post.like_count }}
+                	<br>Creation Date: {{ dino_page_post.creation_date}}
+                	<br>Tags: {{ dino_page_post.tag_text }}
+                	<br>
+                	</li>
+                </div>
             {% endfor %}
 
             {% for dino_page_post in dino_page_posts|slice:"10:" %}
