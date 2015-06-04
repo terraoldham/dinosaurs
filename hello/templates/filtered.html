@@ -3,11 +3,8 @@
 	<head>
     <link rel="stylesheet" type="static/css" href="{% static 'css/style.css' %}">
 		<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-    <!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<script>
 		$(function(){
@@ -26,27 +23,45 @@
             	<h2>Anyone on this page used a "Nofilter" hashtag, then added a filter</h2>
         	<ul>
             	{% for filtered_post in filtered_posts|slice:":9" %}
-            		<li class="shown">Number: {{ filtered_post.id }}
-                	<br><img src={{ filtered_post.photo_url }} style="width:300px;height:300px">
-                	<br>Full Name: {{ filtered_post.fullname }}
-                	<br>Username: {{ filtered_post.user_name }}
-                	<br>Caption: {{ filtered_post.caption }}
-                	<br>Likes: {{ filtered_post.like_count }}
-                	<br>Creation Date: {{ filtered_post.creation_date}}
-                	<br>Tags: {{ filtered_post.tag_text }}
-                	</li>
+            		<div class="panel-primary">
+            			<div class="panel-heading">
+            				<h3 class="panel-title">{{ filtered_post.fullname }}</h3>
+            				<h4 class="panel-title">@{{ filtered_post.user_name }}</h4>
+            			</div>
+            			<div class="panel-body">
+            				<li class="shown">
+                				<br><img src={{ filtered_post.photo_url }} style="width:300px;height:300px">
+                				<br>Number: {{ filtered_post.id }}
+                				<br>Full Name: {{ filtered_post.fullname }}
+                				<br>Username: {{ filtered_post.user_name }}
+                				<br>Caption: {{ filtered_post.caption }}
+                				<br>Likes: {{ filtered_post.like_count }}
+                				<br>Creation Date: {{ filtered_post.creation_date}}
+                				<br>Tags: {{ filtered_post.tag_text }}
+                			</li>
+                		</div>
+                	</div>
             	{% endfor %}
 
             	{% for filtered_post in filtered_posts|slice:"10:" %}
-            		<li class="extra">Number: {{ filtered_post.id }}
-                	<img src={{ filtered_post.photo_url }} style="width:300px;height:300px">
-                	<br>Full Name: {{ filtered_post.fullname }}
-                	<br>Username: {{ filtered_post.user_name }}
-                	<br>Caption: {{ filtered_post.caption }}
-                	<br>Likes: {{ filtered_post.like_count }}
-                	<br>Creation Date: {{ filtered_post.creation_date}}
-                	<br>Tags: {{ filtered_post.tag_text }}
-                	</li>
+            		<div class="panel-primary">
+            			<div class="panel-heading">
+            				<h3 class="panel-title">{{ filtered_post.fullname }}</h3>
+            				<h4 class="panel-title">@{{ filtered_post.user_name }}</h4>
+            			</div>
+            			<div class="panel-body">
+            				<li class="extra">
+                				<br><img src={{ filtered_post.photo_url }} style="width:300px;height:300px">
+                				<br>Number: {{ filtered_post.id }}
+                				<br>Full Name: {{ filtered_post.fullname }}
+                				<br>Username: {{ filtered_post.user_name }}
+                				<br>Caption: {{ filtered_post.caption }}
+                				<br>Likes: {{ filtered_post.like_count }}
+                				<br>Creation Date: {{ filtered_post.creation_date}}
+                				<br>Tags: {{ filtered_post.tag_text }}
+                			</li>
+                		</div>
+                	</div>
             	{% endfor %}
         	</ul>
     	</body>

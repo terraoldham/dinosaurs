@@ -4,11 +4,8 @@
     <link rel="stylesheet" type="static/css" href="{% static 'css/style.css' %}">
 		<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
 	<link rel="stylesheet" type="text/css" href="/static/style.css">
-    <!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		<script>
 		$(function(){
@@ -47,17 +44,25 @@
             {% endfor %}
 
             {% for dino_page_post in dino_page_posts|slice:"10:" %}
-            	<li class="extra">
-            	<br>Number: {{ dino_page_post.id }}
-                <br><img src={{ dino_page_post.photo_url }} style="width:300px;height:300px">
-                <br>Full Name: {{ dino_page_post.fullname }}
-                <br>Username: {{ dino_page_post.user_name }}
-                <br>Caption: {{ dino_page_post.caption }}
-                <br>Likes: {{ dino_page_post.like_count }}
-                <br>Creation Date: {{ dino_page_post.creation_date}}
-                <br>Tags: {{ dino_page_post.tag_text }}
-                <br>
-                </li>
+            	<div class="panel-primary">
+            		<div class="panel-heading">
+            			<h3 class="panel-title">{{ dino_page_post.fullname }}</h3>
+            			<h4 class="panel-title">@{{ dino_page_post.user_name }}</h4>
+            		</div>
+            		<div class="panel-body">
+            			<li class="extra">
+            				<br><img src={{ dino_page_post.photo_url }} style="width:300px;height:300px">
+            				<br>Number: {{ dino_page_post.id }}
+                			<br>Full Name: {{ dino_page_post.fullname }}
+                			<br>Username: {{ dino_page_post.user_name }}
+                			<br>Caption: {{ dino_page_post.caption }}
+                			<br>Likes: {{ dino_page_post.like_count }}
+                			<br>Creation Date: {{ dino_page_post.creation_date}}
+                			<br>Tags: {{ dino_page_post.tag_text }}
+                			<br>
+                		</li>
+                	</div>
+                </div>
             {% endfor %}
 
         </ul>
