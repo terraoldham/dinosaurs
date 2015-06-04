@@ -12,7 +12,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		<script>
 		$(function(){
-			$(".showAll").click(function(){
+			$("#showAll").click(function(){
 				$("li.extra").each(function(){
 					$(this).removeClass("extra").addClass("shown");
 				});
@@ -55,8 +55,8 @@
             {% endfor %}
 
         </ul>
-    	<button type="button" class="showAll">Show Me All The Dinosaurs!</button>
-    	<form action="/filtered/" method="get"><button>No filter and filter?!</button>
+    	<button class="btn btn-primary btn-sm" id="showAll">Show All Instagram Posts</button>
+    	<form action="/filtered/" method="get"><button>#Nofilter and a Filter?</button>
     </body>
     </div>
 </html>
