@@ -28,17 +28,15 @@
             				<h3 class="panel-title">{{ filtered_post.fullname }}</h3>
             				<h4 class="panel-title">@{{ filtered_post.user_name }}</h4>
             			</div>
-            			<div class="panel-body">
-            				<li class="shown">
-                				<br><img src={{ filtered_post.photo_url }} style="width:300px;height:300px">
-                				<br>Number: {{ filtered_post.id }}
-                				<br>Full Name: {{ filtered_post.fullname }}
-                				<br>Username: {{ filtered_post.user_name }}
-                				<br>Caption: {{ filtered_post.caption }}
-                				<br>Likes: {{ filtered_post.like_count }}
-                				<br>Creation Date: {{ filtered_post.creation_date}}
-                				<br>Tags: {{ filtered_post.tag_text }}
-                			</li>
+            			<div class="panel-body shown">
+                			<br><img src={{ filtered_post.photo_url }} style="width:300px;height:300px">
+                			<br>Number: {{ filtered_post.id }}
+                			<br>Full Name: {{ filtered_post.fullname }}
+                			<br>Username: {{ filtered_post.user_name }}
+                			<br>Caption: {{ filtered_post.caption }}
+                			<br>Likes: {{ filtered_post.like_count }}
+                			<br>Creation Date: {{ filtered_post.creation_date}}
+                			<br>Tags: {{ filtered_post.tag_text }}
                 		</div>
                 	</div>
             	{% endfor %}
@@ -49,8 +47,7 @@
             				<h3 class="panel-title">{{ filtered_post.fullname }}</h3>
             				<h4 class="panel-title">@{{ filtered_post.user_name }}</h4>
             			</div>
-            			<div class="panel-body">
-            				<li class="extra">
+            			<div class="panel-body extra">
                 				<br><img src={{ filtered_post.photo_url }} style="width:300px;height:300px">
                 				<br>Number: {{ filtered_post.id }}
                 				<br>Full Name: {{ filtered_post.fullname }}
@@ -59,7 +56,6 @@
                 				<br>Likes: {{ filtered_post.like_count }}
                 				<br>Creation Date: {{ filtered_post.creation_date}}
                 				<br>Tags: {{ filtered_post.tag_text }}
-                			</li>
                 		</div>
                 	</div>
             	{% endfor %}
