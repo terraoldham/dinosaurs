@@ -9,14 +9,16 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     </head>
     <body>
-    	<div class="jumbotron">
-        	<h1>This is DINOGRAM</h1> 
-            	<h2>Here are the most popular Dinosaurs of the day!</h2>
-                	<form action="/dino/" method="post">
-                    	<button class="btn btn-primary btn-lg" href="#">Show Instagram Posts</button>
-                    	{% csrf_token %}
-                	</form>
+    	<div class="jumbotron vertical-center">
+    		<div class="container text-center">
+        		<h1>This is DINOGRAM</h1> 
+            		<h2>Here are the most popular Dinosaurs of the day!</h2>
+                		<form action="/dino/" method="post">
+                    		<button class="btn btn-primary btn-lg" href="#">Show Instagram Posts</button>
+                    		{% csrf_token %}
+                		</form>
                 	<a href="/dino/">Just show it to me</a>
+            </div>
     	</div>
     </body>
 </html>
