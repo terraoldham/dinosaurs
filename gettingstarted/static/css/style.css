@@ -9,3 +9,13 @@ div.shown {
 .vertical-center { 
 
 }
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.element {
+  .center-block();
+}
