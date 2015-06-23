@@ -19,3 +19,8 @@ div.shown {
 .element {
   .center-block();
 }
+
+.container {
+  width: 940px;
+  .center-block();
+}
